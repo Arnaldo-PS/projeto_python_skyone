@@ -3,6 +3,9 @@ class Pessoa:
         self.nome = nome
         self.fone = fone
 
+    def exibir(self):
+        print(f'-> {self.nome} - {self.fone}')
+
 
 class Squad:
     def __init__(self, nome, techlead=None, devs=None):
@@ -31,6 +34,13 @@ class Dev(Colaborador):
         super().__init__(nome, fone, squad)
         self.cargo = cargo
 
+    def exibir(self):
+        super().exibir()
+        print(f'   Cargo de {self.cargo} na squad {self.squad.nome}\n')
+
+
+print('\n-=-=-=-=-=-=-=-=-=-=-=-=-=-Sky.One Solutions-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+print('Bem vindo ao sistema de cadastro de squads!\n')
 
 while True:
     squads = []
@@ -61,4 +71,14 @@ while True:
     if option in 'Nn' :
         break
 
+
+for squad in squads:
+    print(f'\n-----------------------------{squad.nome}-----------------------------')
+    print(f'Techlead: {squad.techlead.nome}')
+    print('\n-----Devs do squad-----')
+    for dev in squad.devs:
+        dev.exibir()
+    print(f'-----------------------------{squad.nome}-----------------------------')
+
+print('\n-=-=-=-=-=-=-=-=-=-=-=-=-=-Sky.One Solutions-=-=-=-=-=-=-=-=-=-=-=-=-=-')
 
