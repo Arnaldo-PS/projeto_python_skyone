@@ -68,7 +68,7 @@ while True:
             break
 
     option = input('\nDeseja adicionar mais uma squad [S/N]: ')
-    if option in 'Nn' :
+    if option in 'Nn':
         break
 
 
@@ -81,4 +81,3 @@ for squad in squads:
     print(f'-----------------------------{squad.nome}-----------------------------')
 
 print('\n-=-=-=-=-=-=-=-=-=-=-=-=-=-Sky.One Solutions-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-
